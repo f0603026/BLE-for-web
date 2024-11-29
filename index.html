@@ -45,8 +45,12 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       background: #f8f8f8;
+      cursor: pointer;
     }
-    .characteristic {
+    .service-block.collapsed {
+      padding: 15px 15px 0;
+    }
+    .service-block .characteristic {
       margin-left: 20px;
       padding: 10px;
       border-left: 2px solid #ddd;
@@ -62,29 +66,30 @@
       margin-top: 10px;
       padding-left: 20px;
     }
+    select {
+      padding: 8px;
+      font-size: 14px;
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- 标题 -->
     <h1>BLE Device Interaction</h1>
 
-    <!-- 按钮和状态显示 -->
     <div class="controls">
       <button id="scan-btn">Scan for BLE Devices</button>
       <p id="status">Status: Not connected</p>
     </div>
 
-    <!-- 动态生成服务和特征的区域 -->
     <div id="ble-info">
       <h2>Detected Services and Characteristics</h2>
       <div id="services">
-        <!-- 动态生成的内容会插入到这里 -->
+        <!-- Dynamically generated content will be inserted here -->
       </div>
     </div>
   </div>
 
-  <!-- 引入 BLE 功能的 JS 文件 -->
   <script src="ble.js"></script>
 </body>
 </html>
