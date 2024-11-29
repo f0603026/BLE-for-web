@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLE Device Interaction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    #scan-btn {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #scan-btn:hover {
+      background-color: #0056b3;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    .service-block {
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f8f8f8;
+    }
+    .characteristic {
+      margin-left: 20px;
+      padding: 10px;
+      border-left: 2px solid #ddd;
+      background: #fdfdfd;
+      border-radius: 3px;
+    }
+    .read-value {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #007bff;
+    }
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 标题 -->
+    <h1>BLE Device Interaction</h1>
+
+    <!-- 按钮和状态显示 -->
+    <div class="controls">
+      <button id="scan-btn">Scan for BLE Devices</button>
+      <p id="status">Status: Not connected</p>
+    </div>
+
+    <!-- 动态生成服务和特征的区域 -->
+    <div id="ble-info">
+      <h2>Detected Services and Characteristics</h2>
+      <div id="services">
+        <!-- 动态生成的内容会插入到这里 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入 BLE 功能的 JS 文件 -->
+  <script src="ble.js"></script>
+</body>
+</html>
