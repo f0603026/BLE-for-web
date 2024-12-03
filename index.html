@@ -71,6 +71,44 @@
       font-size: 14px;
       margin-left: 10px;
     }
+    #hidden-services {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    #hidden-services strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    #hidden-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hidden-item {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .hidden-item button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .hidden-item button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -86,6 +124,12 @@
       <h2>Detected Services and Characteristics</h2>
       <div id="services">
         <!-- Dynamically generated content will be inserted here -->
+      </div>
+      <div id="hidden-services">
+        <strong>Hidden Services:</strong>
+        <div id="hidden-list">
+          <!-- Hidden services will appear here -->
+        </div>
       </div>
     </div>
   </div>
