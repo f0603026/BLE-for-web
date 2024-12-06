@@ -45,12 +45,11 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       background: #f8f8f8;
-      cursor: pointer;
     }
     .service-block.collapsed {
       padding: 15px 15px 0;
     }
-    .service-block .characteristic {
+    .characteristic {
       margin-left: 20px;
       padding: 10px;
       border-left: 2px solid #ddd;
@@ -62,53 +61,78 @@
       font-size: 14px;
       color: #007bff;
     }
-    ul {
+    .gpio-buttons {
       margin-top: 10px;
-      padding-left: 20px;
+      display: flex;
+      gap: 5px;
     }
-    select {
-      padding: 8px;
-      font-size: 14px;
-      margin-left: 10px;
-    }
-    #hidden-services {
-      margin-top: 20px;
-      padding: 15px;
-      background: #f0f0f0;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    #hidden-services strong {
-      display: block;
-      margin-bottom: 10px;
+    .decoded-value-box {
+      display: inline-block;
+      background-color: white;
+      border: 2px solid black;
+      padding: 10px;
       font-size: 16px;
-    }
-    #hidden-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .hidden-item {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border: 1px solid #ccc;
+      text-align: center;
       border-radius: 5px;
-      padding: 5px 10px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
     }
-    .hidden-item button {
-      margin-left: 10px;
-      padding: 5px 10px;
-      background-color: #007bff;
-      color: #fff;
+    button {
+      padding: 8px 12px;
+      font-size: 14px;
       border: none;
-      border-radius: 3px;
+      border-radius: 5px;
       cursor: pointer;
     }
-    .hidden-item button:hover {
-      background-color: #0056b3;
+    button:hover {
+      opacity: 0.9;
     }
+    .read-once {
+      background-color: #4caf50;
+      color: white;
+    }
+    .continuous-read {
+      background-color: #ff9800;
+      color: white;
+    }
+    .stop-read {
+      background-color: #f44336;
+      color: white;
+    }
+	.characteristic {
+  margin-bottom: 20px;
+	}
+
+	.decoded-value-box {
+	  margin-bottom: 10px;
+	  color: #333;
+	}
+
+	.button-container {
+	  display: flex;
+	  gap: 10px;
+	  flex-wrap: wrap; /* 讓按鈕可以自動換行 */
+	  margin-top: 10px;
+	}
+
+	.read-once,
+	.continuous-read,
+	.stop-read {
+	  padding: 5px 10px;
+	  background-color: #007bff;
+	  color: white;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+
+	.read-once:hover,
+	.continuous-read:hover,
+	.stop-read:hover {
+	  background-color: #0056b3;
+	}
+
   </style>
 </head>
 <body>
@@ -124,12 +148,6 @@
       <h2>Detected Services and Characteristics</h2>
       <div id="services">
         <!-- Dynamically generated content will be inserted here -->
-      </div>
-      <div id="hidden-services">
-        <strong>Hidden Services:</strong>
-        <div id="hidden-list">
-          <!-- Hidden services will appear here -->
-        </div>
       </div>
     </div>
   </div>
